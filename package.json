@@ -1,0 +1,25 @@
+{
+  "name": "dsh-plugin-hacknet-bridge",
+  "version": "0.3.0",
+  "private": true,
+  "type": "module",
+  "description": "Brings the Hacknet Pathfinder Bridge MCP tools into DeepSeek Harness and ships the hacknet-control skill.",
+  "exports": {
+    ".": "./index.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "host-proxy.js",
+    "host/*",
+    "cordis.patch.yml",
+    "skills/hacknet-control.md",
+    "locale/*.json",
+    "icon.svg",
+    "README.md"
+  ],
+  "dsh": {
+    "bundle": { "patch": "./cordis.patch.yml" }
+  }
+}

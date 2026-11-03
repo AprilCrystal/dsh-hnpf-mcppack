@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Hacknet Pathfinder 控制桥",
+    "description": "连接 Hacknet Pathfinder Bridge 的 MCP Host，并让 Agent 掌握暂停观察、派发命令与有限推进的操作流程。"
+  }
+}

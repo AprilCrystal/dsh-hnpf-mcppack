@@ -1,0 +1,24 @@
+# Hacknet Pathfinder Bridge for DeepSeek Harness.
+#
+# Row 1 registers the hacknet-control skill so every agent knows the safe
+# pause/observe/advance workflow of the bridge.
+# Row 2 starts the bridge's stdio MCP host. Set HACKNET_BRIDGE_HOST to the
+# Host DLL when the default build path moves; HACKNET_BRIDGE_REGISTRY selects an
+# isolated instance registry directory (the Host default is
+# %TEMP%/HacknetPathfinderBridge).
+- insert:
+    - id: hacknet-bridge-skill
+      name: dsh-plugin-hacknet-bridge
+
+    - id: mcp-hacknet-bridge
+      name: '@deepseek-ai/dsh-mcp-client'
+      config:
+        serverName: hacknet
+        transport: stdio
+        command: 'C:\Users\AprilCrystal\.dsh\dsh-runtimes\dsh-primary-runtime\dependencies\node\bin\node.exe'
+        args:
+          - 'E:\documents\HN-TEST-AGENT\plugin\host-proxy.js'
+        cwd: 'E:\documents\HN-TEST-AGENT\plugin'
+        # The bridge answers a pipe request within 12.5 s; leave room above it.
+        toolCallTimeoutMs: 30000
+        failOnStartupError: true

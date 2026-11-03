@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Hacknet Pathfinder Bridge",
+    "description": "Connects the Hacknet Pathfinder Bridge MCP host and teaches the agent its paused observe/command/advance workflow."
+  }
+}
